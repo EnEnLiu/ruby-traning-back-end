@@ -1,3 +1,11 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  root 'welcome#index'
+
+  get 'user', to: 'users#index'
+  post 'login', to: 'users#sign_in'
+  get 'singup', to: 'users#new'
+  post 'singup', to: 'users#sign_up'
+  get 'logout', to: 'users#log_out'
+
+  resources :tasks
 end

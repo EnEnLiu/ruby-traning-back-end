@@ -1,0 +1,10 @@
+<% unless current_user %>
+  <%= link_to  "登入", user_path %>
+<%  end %>
+
+<% if current_user %>
+  親愛的 <%= current_user.name %>
+  <%= link_to  "任務", tasks_path %>
+  <%= link_to  "登出", logout_path %>
+<% end %>
+
