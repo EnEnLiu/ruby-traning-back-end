@@ -1,0 +1,27 @@
+<h1>Task#index</h1>
+
+<%= link_to  "新增任務", new_task_path %>
+
+<table>
+  <thead>
+    <tr>
+      <td>編號</td>
+      <td>內容</td>
+
+    </tr>
+  </thead>
+  <tbody>
+    <% n = 1 %>
+    <% @tasks.each do |task| %>
+    <tr>
+      <td><%= n %></td>
+      <td><%= task.content %></td>
+      <td>
+        <%= link_to '修改', edit_task_path(task) %>
+        <%= link_to '刪除', task_path(task), method: 'delete', data: {confirm: '確定要刪除？'} %>
+      </td>
+    </tr>
+    <% n+=1 %>
+    <% end %>
+  </tbody>
+</table>
