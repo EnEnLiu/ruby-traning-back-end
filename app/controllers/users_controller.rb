@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  # layout false
+  layout false
   
   def index
     @user  = User.new  

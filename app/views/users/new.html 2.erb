@@ -1,0 +1,10 @@
+<%= form_for( @user , url: singup_path, method: 'post') do |f| %>
+
+名字：<%= f.text_field :name %><br>
+帳號（信箱）：<%= f.text_field :email %><br>
+密碼：<%= f.password_field :password %><br>
+<%= f.submit %>
+
+<% end %>
+
+<%= link_to  "登入會員", user_path %>

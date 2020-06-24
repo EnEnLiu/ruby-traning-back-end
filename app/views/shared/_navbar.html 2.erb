@@ -4,7 +4,7 @@
 
 <% if current_user %>
   親愛的 <%= current_user.name %>
-  <%= link_to  "任務列表", tasks_path %>
+  <%= link_to  "任務", tasks_path %>
   <%= link_to  "登出", logout_path %>
 <% end %>
 
