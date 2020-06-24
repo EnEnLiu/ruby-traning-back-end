@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   root 'tasks#index'
 
   get 'welcome',  to: 'welcome#index'
+  
   get 'user', to: 'users#index'
   post 'login', to: 'users#sign_in'
   get 'singup', to: 'users#new'
