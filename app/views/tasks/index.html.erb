@@ -1,18 +1,17 @@
-<h1>所有任務</h1>
+<h1><%= t('tasks.all-tasks')%></h1>
 
-<%= link_to  "新增任務", new_task_path %>
+<%= link_to t('tasks.create'), new_task_path %>
 
 <table>
   <thead>
     <tr>
-      <td>編號</td>
-      <td>標題</td>
-      <td>內容</td>
-      <td>優先順序</td>
-      <td>狀態</td>
-      <td>任務開始時間</td>
-      <td>任務結束時間</td>
-
+      <td><%= t('tasks.num') %></td>
+      <td><%= t('tasks.title') %></td>
+      <td><%= t('tasks.content') %></td>
+      <td><%= t('tasks.priority') %></td>
+      <td><%= t('tasks.status') %></td>
+      <td><%= t('tasks.start-at') %></td>
+      <td><%= t('tasks.end-at') %></td>
     </tr>
   </thead>
   <tbody>
@@ -27,8 +26,8 @@
       <td><%= task.start_at %></td>
       <td><%= task.end_at %></td>
       <td>
-        <%= link_to '修改', edit_task_path(task) %>
-        <%= link_to '刪除', task_path(task), method: 'delete', data: {confirm: '確定要刪除？'} %>
+        <%= link_to t('tasks.edit'), edit_task_path(task) %>
+        <%= link_to t('tasks.delete'), task_path(task), method: 'delete', data: {confirm: '確定要刪除？'} %>
       </td>
     </tr>
     <% n+=1 %>

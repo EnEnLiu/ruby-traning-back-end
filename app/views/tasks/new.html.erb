@@ -1,5 +1,5 @@
-<h1>新增任務</h1>
+<h1><%= t('tasks.create') %></h1>
 
 <%= render 'shared/task_form',  task: @task %>
 
-<%= link_to  "回首頁", root_path %>
+<%= link_to t('navbar.home-page'), root_path %>

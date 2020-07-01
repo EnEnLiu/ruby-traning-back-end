@@ -1,10 +1,11 @@
-<h1>登入</h1>
+<h1><%= t('users.sign-in')%></h1>
+<%= notice %>
 
 <%= form_for( @user, url: login_path, method: 'post') do |f| %>
-  帳號（信箱）：<%= f.text_field :email %><br>
-  密碼：<%= f.password_field :password %><br>
-  <%= f.submit %>
+  <%= t('users.email') %>：<%= f.text_field :email %><br>
+  <%= t('users.password') %>：<%= f.password_field :password %><br>
+  <%= f.submit t('users.sign-in')  %>
 <% end %>
 
-<%= link_to  "加入會員", singup_path %>
-<%= link_to  "首頁", welcome_path %>
+<%= link_to t('users.sign-up-link'), singup_path %>
+<%= link_to t('navbar.home-page'), welcome_path %>

@@ -14,9 +14,9 @@ class UsersController < ApplicationController
     
     if user
       session[:user] = user.id
-      redirect_to root_path, notice: '成功'
+      redirect_to root_path, notice: t('users.successful-log-in')
     else
-      redirect_to user_path, notice: '失敗'
+      redirect_to user_path, notice: t('users.fail-log-in')
     end  
   end
 
@@ -24,7 +24,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
 
     if @user.save
-      redirect_to root_path, notice: '成功註冊'
+      redirect_to root_path, notice: t('users.successful-sign-up')
     else
       render :new
     end
