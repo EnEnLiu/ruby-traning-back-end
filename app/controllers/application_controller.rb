@@ -8,6 +8,6 @@ class ApplicationController < ActionController::Base
   end
 
   def is_login?
-    redirect_to welcome_path , notice: '請登入' unless current_user
+    redirect_to welcome_path , notice: t('navbar.please-log-in') unless current_user
   end
 end

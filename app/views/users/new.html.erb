@@ -1,11 +1,12 @@
-<h1>註冊</h1>
+<h1><%= t('users.sign-up') %></h1>
+<%= notice %>
 
 <%= form_for( @user , url: singup_path, method: 'post') do |f| %>
-  名字：<%= f.text_field :name %><br>
-  帳號（信箱）：<%= f.text_field :email %><br>
-  密碼：<%= f.password_field :password %><br>
-  <%= f.submit %>
+  <%= t('users.name') %>：<%= f.text_field :name %><br>
+  <%= t('users.email') %>：<%= f.text_field :email %><br>
+  <%= t('users.password') %>：<%= f.password_field :password %><br>
+  <%= f.submit t('users.sign-up') %>
 <% end %>
 
-<%= link_to  "登入會員", user_path %>
-<%= link_to  "首頁", welcome_path %>
+<%= link_to t('users.sign-in-link'), user_path %>
+<%= link_to t('navbar.home-page'), welcome_path %>

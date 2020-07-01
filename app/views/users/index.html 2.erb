@@ -1,9 +1,0 @@
-<h1>登入</h1>
-
-<%= form_for( @user, url: login_path, method: 'post') do |f| %>
-  帳號（信箱）：<%= f.text_field :email %><br>
-  密碼：<%= f.password_field :password %><br>
-  <%= f.submit %>
-<% end %>
-
-<%= link_to  "加入會員", singup_path %>
