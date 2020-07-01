@@ -6,7 +6,12 @@
   <thead>
     <tr>
       <td>編號</td>
+      <td>標題</td>
       <td>內容</td>
+      <td>優先順序</td>
+      <td>狀態</td>
+      <td>任務開始時間</td>
+      <td>任務結束時間</td>
 
     </tr>
   </thead>
@@ -15,7 +20,12 @@
     <% @tasks.each do |task| %>
     <tr>
       <td><%= n %></td>
+      <td><%= task.title %></td>
       <td><%= task.content %></td>
+      <td><%= task.priority %></td>
+      <td><%= task.status %></td>
+      <td><%= task.start_at %></td>
+      <td><%= task.end_at %></td>
       <td>
         <%= link_to '修改', edit_task_path(task) %>
         <%= link_to '刪除', task_path(task), method: 'delete', data: {confirm: '確定要刪除？'} %>
