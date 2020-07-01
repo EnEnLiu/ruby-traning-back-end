@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Task, type: :model do  
   describe "可建立task" do
-    let(:user){create(:user)}
+    # let(:user){create(:user)}
 
     context "成功" do
       
