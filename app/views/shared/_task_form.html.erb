@@ -22,9 +22,9 @@
     <select name="task[status]">
       <%= options_for_select(
         [
-          ['Pending', 'pending'],
-          ['Processing', 'processing'],
-          ['Solved', 'solved']
+          [t('tasks.pending'), 'pending'],
+          [t('tasks.processing'), 'processing'],
+          [t('tasks.solved'), 'solved']
         ], 'pending'
       ) %>
     </select>

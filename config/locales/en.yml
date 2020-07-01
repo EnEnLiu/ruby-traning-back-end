@@ -234,6 +234,9 @@ en:
     first: First
     second: Second
     third: Third
+    pending: Pending
+    processing: Processing
+    solved: Solved
   users:
     sign-in: Sign in
     sign-up: Sign up

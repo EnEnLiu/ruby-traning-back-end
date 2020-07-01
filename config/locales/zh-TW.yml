@@ -232,6 +232,9 @@ zh-TW:
     first: 優先
     second: 次要
     third: 可以先緩緩
+    pending: 待處理
+    processing: 進行中
+    solved: 已解決
   users:
     sign-in: 會員登入
     sign-up: 註冊會員
