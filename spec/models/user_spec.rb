@@ -5,7 +5,7 @@ RSpec.describe User, type: :model do
     it '所有欄位皆有內容，email不與其他用戶重複，密碼6個字以上' do
       user = User.new(
         name: 'nn',
-        email: 'nn@example.com',
+        email: 'nn@example.com.tw',
         password: 'password',
         password_confirmation: 'password'
       )
@@ -37,6 +37,11 @@ RSpec.describe User, type: :model do
       user = User.new(password: 12345)
       user.valid?
       expect(user.errors[:password]).to include('過短（最短是 6 個字）')
+    end
+    it 'email格式不符' do
+      user = User.new(email: '123.com')
+      user.valid?
+      expect(user.errors[:email]).to include('是無效的')
     end
     it 'email與其他用戶重複' do
       User.create(
