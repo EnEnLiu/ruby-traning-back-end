@@ -241,6 +241,7 @@ zh-TW:
     name: 名字
     email: 信箱
     password: 密碼
+    password-confirmation: 密碼確認
     sign-in-link: 已經是會員了！
     sign-up-link: 還不是會員嗎？
     successful-log-in: 已登入
