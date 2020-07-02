@@ -1,9 +1,6 @@
 <h1><%= t('users.sign-up') %></h1>
-<%= notice %>
-
 
 <%= form_for( @user , url: singup_path, method: 'post') do |f| %>
-
   <% if @user.errors.any? %>
     <ul>
       <% @user.errors.full_messages.each do |message| %>
