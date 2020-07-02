@@ -243,6 +243,7 @@ en:
     name: Name
     email: Email
     password: Password
+    password-confirmation: Password-confirmation
     sign-in-link: Already is our member
     sign-up-link: Not a member yet?
     successful-log-in: Log in successful!
