@@ -10,36 +10,31 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_27_100505) do
+ActiveRecord::Schema.define(version: 2020_06_27_095953) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "tags", force: :cascade do |t|
     t.string "name"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "task_tags", force: :cascade do |t|
     t.bigint "task_id", null: false
     t.bigint "tag_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["tag_id"], name: "index_task_tags_on_tag_id"
-    t.index ["task_id"], name: "index_task_tags_on_task_id"
+    t.index ["tag_id"], name: "index_tags_on_tag_id"
+    t.index ["task_id"], name: "index_tags_on_task_id"
   end
 
   create_table "tasks", force: :cascade do |t|
+    t.string "title"
     t.string "content"
+    t.datetime "start_at"
+    t.datetime "end_at"
+    t.string "priority"
+    t.string "status"
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "title"
-    t.date "start_at"
-    t.date "end_at"
-    t.string "priority"
-    t.string "status"
     t.index ["user_id"], name: "index_tasks_on_user_id"
   end
 
@@ -51,7 +46,7 @@ ActiveRecord::Schema.define(version: 2020_06_27_100505) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  add_foreign_key "task_tags", "tags"
-  add_foreign_key "task_tags", "tasks"
+  add_foreign_key "tags", "tags"
+  add_foreign_key "tags", "tasks"
   add_foreign_key "tasks", "users"
 end

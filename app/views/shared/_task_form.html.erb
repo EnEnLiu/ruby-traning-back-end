@@ -30,10 +30,10 @@
     </select>
   </div>
   <div>
-    <%= t('tasks.start-at') %>：<%= f.date_field :start_at %>
+    <%= t('tasks.start-at') %>：<%= f.datetime_field :start_at %>
   </div>
   <div>
-    <%= t('tasks.end-at') %>：<%= f.date_field :end_at %>
+    <%= t('tasks.end-at') %>：<%= f.datetime_field :end_at %>
   </div>
   <%= f.hidden_field :user_id, value: current_user.id %>
   <%= f.submit t('tasks.create') %>
