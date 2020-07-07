@@ -9,5 +9,4 @@ class User < ApplicationRecord
   validates :password, presence: true, 
                        length: { in: 6..20 },
                        confirmation: true
-  # message: "Password must be at least 8 characters long, at least 1 English letter" }
 end

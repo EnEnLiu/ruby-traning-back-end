@@ -2,9 +2,8 @@ class TasksController < ApplicationController
   before_action :is_login?
   before_action :find_task, only: [:edit, :update, :destroy]
 
-
   def index
-    @tasks = current_user.task
+    @tasks = current_user.task.order(created_at: :desc)
   end
 
   def new 
@@ -38,7 +37,6 @@ class TasksController < ApplicationController
   end
 
   private
-
   def task_params
     params.require(:task).permit(:title,
                                  :content, 
