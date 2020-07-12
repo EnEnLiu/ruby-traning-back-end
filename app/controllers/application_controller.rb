@@ -1,8 +1,7 @@
 class ApplicationController < ActionController::Base
   helper_method  :current_user, :is_login?
-
+  
   private
-
   def current_user
     User.find_by(id: session[:user])
   end

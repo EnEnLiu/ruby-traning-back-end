@@ -6,6 +6,7 @@ RSpec.describe User, type: :model do
       expect(FactoryBot.build(:user)).to be_valid
     end
   end
+  
   context '註冊失敗' do
     it 'name欄位是空的' do
       user = FactoryBot.build(:user, name: nil)

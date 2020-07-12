@@ -2,23 +2,21 @@
 
 <%= link_to t('tasks.create'), new_task_path %>
 
-<table>
+<table class="table">
   <thead>
     <tr>
-      <td><%= t('tasks.num') %></td>
       <td><%= t('tasks.title') %></td>
       <td><%= t('tasks.content') %></td>
       <td><%= t('tasks.priority') %></td>
       <td><%= t('tasks.status') %></td>
       <td><%= t('tasks.start-at') %></td>
       <td><%= t('tasks.end-at') %></td>
+      <td></td>
     </tr>
   </thead>
   <tbody>
-    <% n = 1 %>
     <% @tasks.each do |task| %>
     <tr>
-      <td><%= n %></td>
       <td><%= task.title %></td>
       <td><%= task.content %></td>
       <td><%= task.priority %></td>
@@ -27,10 +25,9 @@
       <td><%= task.end_at %></td>
       <td>
         <%= link_to t('tasks.edit'), edit_task_path(task) %>
-        <%= link_to t('tasks.delete'), task_path(task), method: 'delete', data: {confirm: '確定要刪除？'} %>
+        <%= link_to t('tasks.delete'), task_path(task), method: 'delete', id: 'task-delete', data: {confirm: '確定要刪除？'} %>
       </td>
     </tr>
-    <% n+=1 %>
     <% end %>
   </tbody>
 </table>
