@@ -21,7 +21,7 @@ RSpec.feature "Tasks", type: :feature do
       }
     end
     it '任務排序依新增時間，最新的會在最上面' do
-      task2 = FactoryBot.create(:task, title: 'task2')
+      task2 = create(:task, title: 'task2')
       expect(Task.first.title).to eq 'task2'
     end
     it '可以修改' do

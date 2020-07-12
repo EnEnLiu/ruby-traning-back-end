@@ -1,12 +1,13 @@
 class TasksController < ApplicationController
   before_action :is_login?
   before_action :find_task, only: [:edit, :update, :destroy]
+  http_basic_authenticate_with name: "name", password: "password", except: :index
 
   def index
-    @tasks = current_user.task.order(created_at: :desc)
+    @tasks = current_user.tasks.order(created_at: :desc)
   end
 
-  def new 
+  def new
     @task  = Task.new
   end
 
@@ -26,7 +27,7 @@ class TasksController < ApplicationController
   def update
     if @task.update(task_params)
       redirect_to tasks_path, notice:  'Updated!'
-    else 
+    else
       render :edit
     end
   end
@@ -39,7 +40,7 @@ class TasksController < ApplicationController
   private
   def task_params
     params.require(:task).permit(:title,
-                                 :content, 
+                                 :content,
                                  :user_id,
                                  :priority,
                                  :status,
