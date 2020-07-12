@@ -8,10 +8,10 @@ https://editor.ponyorm.com/user/entzu/task_list/designer
 
 ![Imgur](https://imgur.com/HvahIOW.jpg)
 ```
-user 
+user
 has_many :task
 
-task 
+task
 belongs_to :user
 has_many :tag, through: :task_tag
 
@@ -23,3 +23,6 @@ belongs_to :task
 belongs_to. :tag
 
 ```
+
+basic_authenticate:
+name: "name", password: "password"
