@@ -40,7 +40,6 @@ RSpec.feature "Tasks", type: :feature do
     end
   end
 
-
 end
 
 
