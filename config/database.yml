@@ -5,7 +5,6 @@
 #   gem 'sqlite3'
 #
 default: &default
-  # adapter: sqlite3
   adapter: postgresql
   encoding: unicode
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
@@ -13,7 +12,6 @@ default: &default
 
 development:
   <<: *default
-  # database: db/development.sqlite3
   database: task_list_development
 
 # Warning: The database defined as "test" will be erased and
@@ -21,10 +19,8 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  # database: db/test.sqlite3
   database: task_list_test
 
 production:
   <<: *default
-  # database: db/production.sqlite3
   database: task_list_production
